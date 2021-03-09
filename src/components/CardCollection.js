@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Card from './Card'
 
-export default function CardCollection(props) {
-  return(
-    <div>
-      {
-        props.cards.map(card => {
-          return <Card card={card}/>
-        })
-      }
-    </div>
+class CardCollection extends Component {
+  state = {
+    deck: []
+  }
+
+  componentDidMount(){
+    fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
+      .then(response => response.json())
+      .then(cards => this.setState({deck: cards}))
+  }
+
+  showDeck = () => {
+    console.log(this.deck)
+    // return this.props.cards.map(card => <Card key={card.code} card={card} />)
+  }
+
+  render(){
+    return(
+      <div className='card-container'>
+        {this.showDeck()}
+      </div>
   )
+  }
+  
 }
+export default CardCollection

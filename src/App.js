@@ -4,20 +4,22 @@ import './App.css';
 
 class App extends Component {
 
-  state = {
-    cards: []
-  }
+  // state = {
+  //   deck: []
+  // }
 
-  componentDidMount(){
-    fetch('http://localhost:3000/cards')
-      .then(response => response.json())
-      .then(cards => this.setState({cards: cards}))
-  }
+  // componentDidMount(){
+  //   fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
+  //     .then(response => response.json())
+  //     .then(cards => this.setState({deck: cards}))
+  // }
 
+  
   render(){
+    // console.log(this.state.deck.cards)
     return (
       <div className="App">
-        <CardCollection cards={this.cards}/>
+        <CardCollection />
       </div>
     );
   }
