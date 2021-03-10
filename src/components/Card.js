@@ -1,10 +1,31 @@
 import React from 'react'
 
-export default function Card(props){
+
+class Card extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      cardImage: '/back_of_playcard11.jpg'
+
+    }
+  }
+
+  flipCard = () => {
+    this.setState({
+      cardImage: this.props.card.image
+    })
+    this.props.findAction(this.props.card.value)
+  }
+
   
-  return(
-    <div >
-      <img className='card' src='/back_of_playcard11.jpg' alt="cardimg"/>
-    </div>
-  )
+
+  render(){
+    return(
+      <div>
+        <img className='card' onClick={() => this.flipCard()}src={this.state.cardImage} alt="cardimg"/>
+      </div>
+    )
+  }
 }
+
+export default Card

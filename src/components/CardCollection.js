@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Card from './Card'
+import Flip from './Flip'
 
 class CardCollection extends Component {
   state = {
@@ -13,7 +14,7 @@ class CardCollection extends Component {
   }
 
   showDeck = () => {
-    return this.state.deck.map(card => <Card key={card.code} card={card} />)
+    return this.state.deck.map(card => <Card key={card.code} card={card} findAction={this.props.findAction} />)
   }
 
   render(){
