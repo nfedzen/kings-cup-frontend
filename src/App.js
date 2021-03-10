@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import CardCollection from './components/CardCollection'
 import Action from './components/Action'
+import BeerCan from './components/BeerCan'
 import './App.css';
+
+const popped = 'http://cdn.lowgif.com/small/f6e92d70bc5aabd6-image-beer-explosion-gif-simpsons-wiki-fandom-powered-by-wikia.gif'
+const closed = 'https://images-na.ssl-images-amazon.com/images/I/815RIqtcIAL._AC_SL1500_.jpg'
 
 class App extends Component {
 
   state = {
     action: 'Choose a Card!',
     clicks: 0,
-    canPopped: false
+    canPopped: false,
+    canStatus: closed
   }
 
   // componentDidMount(){
@@ -66,6 +71,7 @@ class App extends Component {
       this.popCan(this.state.clicks)
     } else {
       this.setState({action: 'Can Popped! Finish your drink and start a new game!'})
+      this.setState({canStatus: popped})
     }
   }
 
@@ -87,6 +93,7 @@ class App extends Component {
         </header>
         
         <div className="App">
+          <BeerCan canStatus={this.state.canStatus}/>
           <Action action={this.state.action}></Action>
           <CardCollection findAction={this.findAction}/>
         </div>

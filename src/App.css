@@ -15,8 +15,18 @@
   flex-wrap: wrap;
 }
 
+.beer-can{
+  background-color: antiquewhite;
+}
+
+.can{
+  height: 150px;
+}
+
 .card{
   height: 120px;
   padding-left: 20px;
   padding-right: 20px;
 }
+
+
