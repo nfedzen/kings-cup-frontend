@@ -2,6 +2,22 @@
   text-align: center;
 }
 
+.header{
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: antiquewhite;
+}
+
 .card-container{
-  background-color:antiquewhite
+  background-color:rgb(97, 57, 5);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+  height: 150px;
+  margin: 5%;
+  padding-left: 25px;
+  padding-right: 25px;
 }

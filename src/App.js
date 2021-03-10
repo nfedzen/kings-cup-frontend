@@ -18,9 +18,15 @@ class App extends Component {
   render(){
     // console.log(this.state.deck.cards)
     return (
-      <div className="App">
+      <section>
+        <header className='header'>
+          Welcome To Kings Cup!
+        </header>
+        <div className="App">
         <CardCollection />
       </div>
+      </section>
+      
     );
   }
     

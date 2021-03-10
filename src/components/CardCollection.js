@@ -9,12 +9,11 @@ class CardCollection extends Component {
   componentDidMount(){
     fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
       .then(response => response.json())
-      .then(cards => this.setState({deck: cards}))
+      .then(cards => this.setState({deck: cards.cards}))
   }
 
   showDeck = () => {
-    console.log(this.deck)
-    // return this.props.cards.map(card => <Card key={card.code} card={card} />)
+    return this.state.deck.map(card => <Card key={card.code} card={card} />)
   }
 
   render(){
