@@ -78,7 +78,7 @@ class App extends Component {
   popCan = (clicks) => {
     let min = Math.ceil(clicks)
     let max = Math.floor(52)
-    if( 52 === Math.floor(Math.random() * (max - min + 1) + min)){
+    if( (52 === Math.floor(Math.random() * (max - min + 1) + min)) || (clicks === 51)){
       this.setState({canPopped: true})
     }
   }
@@ -93,8 +93,10 @@ class App extends Component {
         </header>
         
         <div className="App">
-          <BeerCan canStatus={this.state.canStatus}/>
-          <Action action={this.state.action}></Action>
+          <div>
+            <BeerCan canStatus={this.state.canStatus}/>
+            <Action action={this.state.action}></Action>
+          </div>
           <CardCollection findAction={this.findAction}/>
         </div>
       </section>
