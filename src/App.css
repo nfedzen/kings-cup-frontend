@@ -14,7 +14,7 @@ body{
   height: 100px;
 }
 .action-text{
-  background:rgba(2, 2, 0, 0.75);
+  background:rgba(2, 2, 0, 0.15);
   display: flex;
   justify-content: center;
   align-items: center;
