@@ -88,14 +88,13 @@ class App extends Component {
     // console.log(this.state.deck.cards)
     return (
       <section>
-        <header className='header'>
-          Welcome To Kings Cup!
-        </header>
         
         <div className="App">
           <div>
-            <BeerCan canStatus={this.state.canStatus}/>
-            <Action action={this.state.action}></Action>
+            <BeerCan canStatus={this.state.canStatus} action={this.state.action}/>
+            {/* <Action action={this.state.action}></Action> */}
+          </div>
+          <div className='action-bar'>
           </div>
           <CardCollection findAction={this.findAction}/>
         </div>
