@@ -8,7 +8,7 @@ export default class BeerCan extends React.Component{
     return(
       <section className='title-section'>
         <header className='header'>
-          <h1 className='title'>Welcome To Kings Cup!</h1>
+          <h1 className='title'>Welcome To King's Cup!</h1>
         </header>
 
         <div className='beer-can'>

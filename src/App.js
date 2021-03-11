@@ -4,7 +4,7 @@ import BeerCan from './components/BeerCan'
 import './App.css';
 
 const popped = 'http://cdn.lowgif.com/small/f6e92d70bc5aabd6-image-beer-explosion-gif-simpsons-wiki-fandom-powered-by-wikia.gif'
-const closed = 'https://images-na.ssl-images-amazon.com/images/I/815RIqtcIAL._AC_SL1500_.jpg'
+const closed = '/beerCan2.png'
 
 class App extends Component {
 
