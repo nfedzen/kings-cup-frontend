@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CardCollection from './components/CardCollection'
-import Action from './components/Action'
 import BeerCan from './components/BeerCan'
 import './App.css';
 

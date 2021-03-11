@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Card from './Card'
-import Flip from './Flip'
 
 class CardCollection extends Component {
   state = {
