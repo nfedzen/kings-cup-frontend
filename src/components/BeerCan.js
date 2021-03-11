@@ -12,7 +12,7 @@ export default class BeerCan extends React.Component{
         </header>
 
         <div className='beer-can'>
-          <img className='can' src={this.props.canStatus} alt='closed can'/>
+          <img className='can' src={process.env.PUBLIC_URL + this.props.canStatus} alt='closed can'/>
           <div className='action-text'>
             <Action action={this.props.action}/>
           </div>
