@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# King's Cup
+> A classic drinking game!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
+* [General info / Rules](#general-info)
+* [Action Rules](#action-rules)
+* [Intro Video](#intro-video)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
 
-## Available Scripts
+## General info
+King's Cup is a drinking game played with a deck of cards and a can of beer! To start the game, the cards are spread around the can. Each player takes turns pulling a card. The value of each card corresponds with a drinking action:
+  - Ace: Waterfall
+  - 2: You
+  - 3: Me
+  - 4: Floor
+  - 5: Guys
+  - 6: Chicks
+  - 7: Heaven
+  - 8: Date
+  - 9: Rhyme
+  - 10: Categories
+  - Jack: Never Have I Ever
+  - Queen: Question Master
+  - King: Make a Rule
 
-In the project directory, you can run:
+Once the action is performed, the player puts their card in the tab of the beer can. If the can pops, the person who popped it drinks the beer. To apply that rule, each time you click on a card, there is a chance for the can to pop. The more clicks you take, the higher the chance of the can popping.
 
-### `yarn start`
+## Action Rules
+  - Ace: Waterfall: Everyone starts drinking at the same time. When the player who pulled the card stops drinking, the player to his left is then allowed to stop drinking, and so on until everyone has stopped.
+  - 2: You: The player who pulled the card picks someone to drink
+  - 3: Me: The player who pulled the card drinks
+  - 4: Floor: When the card is pulled, everyone points to the floor. The last person to point drinks.
+  - 5: Guys: All players who identify as male take a drink.
+  - 6: Chicks: All players who identify as female take a drink.
+  - 7: Heaven: When the card is pulled, everyone points to the heavens. The last person to point drinks.
+  - 8: Date: The player who pulls this card chooses another player to be their date. Whenever either player has to drink, their date also has to drink the same amount.
+  - 9: Rhyme: The player who pulls this card chooses a word to rhyme with. Proceeding clockwise, each player says a word that rhymes with the originally chosen word. If someone repeats a word, or can't think of one, they drink.
+  - 10: Categories: Same concept as Rhyme, but the player who pulls this card names a category(Animals, colors, movies, etc.) instead of a rhyme.
+  - Jack: Never Have I Ever: Self explanatory, start with 3 fingers and move clockwise. The first player or players who pull down all 3 fingers drink.
+  - Queen: Question Master: The player who pulls this card becomes the 
+  Question Master. Whenever another player answers any question asked by the Question Master, they have to drink. There can only be one Question Master at a time.
+  - King: Make a Rule: The player who pulls this card can make any rule that all players much follow for the rest of the game. Breaking the rule results in a drink. Rules stay in effect for the entire game.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Intro Video
+[Kings Cup on Youtube](https://youtu.be/vcnnLmJWDTc)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies
+* React
+* JavaScript
+* Deck of Cards API
 
-### `yarn test`
+## Setup
+To run this project, install it locally by cloning the GitHub repository and typing:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm start
 
-### `yarn build`
+or visit it at:
+[Kings Cup](https://kingscup.netlify.app/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Inspiration
+I have always been a fan of drinking games, and with the pandemic, it is difficult to meet in person. I wanted to create a way to play one of my favorite drinking games virtually!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contact
+Created by [Nathan Fedzen](https://www.linkedin.com/in/nathan-fedzen/)
 
-### `yarn eject`
+Feel free to contact me!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
