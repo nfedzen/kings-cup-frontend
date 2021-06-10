@@ -1,28 +1,20 @@
-import React, { Component } from 'react'
-import Card from './Card'
+import React, { useEffect, useState } from "react";
+import Card from "./Card";
 
-class CardCollection extends Component {
-  state = {
-    deck: []
+export default function CardCollection({ findAction }) {
+  const [deck, setDeck] = useState([]);
+
+  useEffect(() => {
+    fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=52")
+      .then((response) => response.json())
+      .then((cards) => setDeck(cards.cards));
+  }, []);
+
+  function showDeck() {
+    return deck.map((card) => (
+      <Card key={card.code} card={card} findAction={findAction} />
+    ));
   }
 
-  componentDidMount(){
-    fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
-      .then(response => response.json())
-      .then(cards => this.setState({deck: cards.cards}))
-  }
-
-  showDeck = () => {
-    return this.state.deck.map(card => <Card key={card.code} card={card} findAction={this.props.findAction} />)
-  }
-
-  render(){
-    return(
-      <div className='card-container'>
-        {this.showDeck()}
-      </div>
-  )
-  }
-  
+  return <div className="card-container">{showDeck()}</div>;
 }
-export default CardCollection
