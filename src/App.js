@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import CardCollection from "./components/CardCollection";
 import BeerCan from "./components/BeerCan";
 import BeerCanImage from "./beerCan2.png";
@@ -8,104 +8,86 @@ const popped =
   "http://cdn.lowgif.com/small/f6e92d70bc5aabd6-image-beer-explosion-gif-simpsons-wiki-fandom-powered-by-wikia.gif";
 const closed = BeerCanImage;
 
-class App extends Component {
-  state = {
-    action: "Choose a Card!",
-    clicks: 0,
-    canPopped: false,
-    canStatus: closed,
-  };
+export default function App() {
+  const [action, setAction] = useState("Choose a Card!");
+  const [clicks, setClicks] = useState(0);
+  const [canPopped, setCanPopped] = useState(false);
+  const [canStatus, setCanStatus] = useState(closed);
 
-  // componentDidMount(){
-  //   fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
-  //     .then(response => response.json())
-  //     .then(cards => this.setState({deck: cards}))
-  // }
-
-  findAction = (cardValue) => {
-    if (!this.state.canPopped) {
+  function findAction(cardValue) {
+    if (!canPopped) {
       switch (cardValue) {
         case "ACE":
-          this.setState({ action: "Waterfall" });
+          setAction("Waterfall");
           break;
         case "2":
-          this.setState({ action: "Pick someone to drink" });
+          setAction("Pick someone to drink");
           break;
         case "3":
-          this.setState({ action: "Take a drink" });
+          setAction("Take a drink");
           break;
         case "4":
-          this.setState({ action: "Floor" });
+          setAction("Floor");
           break;
         case "5":
-          this.setState({ action: "Guys" });
+          setAction("Guys");
           break;
         case "6":
-          this.setState({ action: "Chicks" });
+          setAction("Chicks");
           break;
         case "7":
-          this.setState({ action: "Heaven" });
+          setAction("Heaven");
           break;
         case "8":
-          this.setState({ action: "Date" });
+          setAction("Date");
           break;
         case "9":
-          this.setState({ action: "Rhyme" });
+          setAction("Rhyme");
           break;
         case "10":
-          this.setState({ action: "Categories" });
+          setAction("Categories");
           break;
         case "JACK":
-          this.setState({ action: "Never Have I Ever" });
+          setAction("Never Have I Ever");
           break;
         case "QUEEN":
-          this.setState({ action: "Question Master" });
+          setAction("Question Master");
           break;
         case "KING":
-          this.setState({ action: "Make a Rule" });
+          setAction("Make a Rule");
           break;
         default:
           break;
       }
-      this.setState({ clicks: this.state.clicks + 1 });
-      this.popCan(this.state.clicks);
+      setClicks(clicks + 1);
+      popCan(clicks);
     } else {
-      this.setState({
-        action: "Can Popped! Finish your drink and start a new game!",
-      });
-      this.setState({ canStatus: popped });
+      setAction("Can Popped! Finish your drink and start a new game!");
+      setCanStatus(popped);
     }
-  };
+  }
 
-  popCan = (clicks) => {
+  function popCan(clicks) {
     let min = Math.ceil(clicks);
     let max = Math.floor(52);
     if (
       52 === Math.floor(Math.random() * (max - min + 1) + min) ||
       clicks === 51
     ) {
-      this.setState({ canPopped: true });
+      setCanPopped(true);
     }
-  };
-
-  render() {
-    // console.log(this.state.deck.cards)
-    return (
-      <section>
-        <div className="App">
-          <div>
-            <BeerCan
-              canStatus={this.state.canStatus}
-              action={this.state.action}
-            />
-            {/* <Action action={this.state.action}></Action> */}
-          </div>
-          <div className="action-bar"></div>
-          <CardCollection findAction={this.findAction} />
-        </div>
-      </section>
-    );
   }
-}
 
-export default App;
+  return (
+    <section>
+      <div className="App">
+        <div>
+          <BeerCan canStatus={canStatus} action={action} />
+          {/* <Action action={this.state.action}></Action> */}
+        </div>
+        <div className="action-bar"></div>
+        <CardCollection findAction={findAction} />
+      </div>
+    </section>
+  );
+}
